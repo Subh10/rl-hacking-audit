@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-auditor"
+version = "0.4.0"
+description = "Open-source adversarial evaluation laboratory for AI models, agents, RL systems, RAG and tool-using workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "AI Auditor Contributors"}]
+keywords = ["ai-security", "red-teaming", "llm", "agents", "reinforcement-learning", "evaluation", "prompt-injection", "sarif", "owasp-llm", "rag", "mcp"]
+classifiers = ["Development Status :: 3 - Alpha", "Intended Audience :: Developers", "Topic :: Security", "Programming Language :: Python :: 3"]
+dependencies = []
+
+[project.optional-dependencies]
+numpy = ["numpy>=1.26"]
+yaml = ["pyyaml>=6.0"]
+dev = ["pytest>=8.0", "ruff>=0.6", "pyyaml>=6.0"]
+
+[project.scripts]
+ai-auditor = "ai_auditor.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

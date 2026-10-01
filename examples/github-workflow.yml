@@ -1,0 +1,14 @@
+name: AI security gate
+on: [pull_request]
+permissions: {contents: read, security-events: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: your-org/ai-auditor@v0.4
+        env: {OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"}
+        with: {target: "openai:YOUR_MODEL", fail-on: high}
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with: {sarif_file: ai-auditor-out/report.sarif}
