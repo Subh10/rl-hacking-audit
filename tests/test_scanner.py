@@ -31,10 +31,12 @@ def test_same_seed_is_reproducible_and_different_seed_changes_canaries():
     a = _scan(vulnerable_agent, converters=["identity"], seed=1)
     b = _scan(vulnerable_agent, converters=["identity"], seed=1)
     c = _scan(vulnerable_agent, converters=["identity"], seed=2)
-    assert [x.prompt for x in a.attempts] == [x.prompt for x in b.attempts] and a.evidence_root == b.evidence_root != c.evidence_root
+    assert [x.prompt for x in a.attempts] == [x.prompt for x in b.attempts]
+    assert a.evidence_root == b.evidence_root != c.evidence_root
 
 def test_requirements_skip_scenarios_instead_of_faking_results():
-    report = _scan(lambda prompt: "no", converters=["identity"])
+    blackbox = Target("bb", invoke=lambda prompt: "no")
+    report = Scanner(blackbox, converters=["identity"]).run()
     assert {"SPL-001", "TOOL-001", "EXF-001", "HIER-001"} <= set(report.skipped)
     assert report.attempts and all(a.system is None for a in report.attempts)
 
