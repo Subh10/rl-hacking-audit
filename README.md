@@ -50,7 +50,7 @@ listed**, never silently faked.
 ## CI regression gate
 
 ```yaml
-- uses: your-org/ai-auditor@v0.4
+- uses: Subh10/rl-hacking-audit@v0.4
   with:
     target: py:myapp.agent:run
     fail-on: high
