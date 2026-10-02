@@ -19,3 +19,6 @@ runs:
     - run: cat ai-auditor-out/report.md >> "$GITHUB_STEP_SUMMARY"
       if: always()
       shell: bash
+branding:
+  icon: shield
+  color: blue
