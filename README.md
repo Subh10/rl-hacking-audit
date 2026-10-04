@@ -1,4 +1,6 @@
-# AI Auditor
+# RL Hacking Audit
+
+![RL Hacking Audit](assets/rl-hacking-audit-icon.svg)
 
 > **Attack it. Prove it. Reproduce it. Gate it in CI.**
 
