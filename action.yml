@@ -21,4 +21,4 @@ runs:
       shell: bash
 branding:
   icon: shield
-  color: blue
+  color: green
