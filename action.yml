@@ -1,4 +1,4 @@
-name: AI Auditor
+name: RL Hacking Audit by Subh10
 description: Adversarially test an LLM app/agent and gate CI on the result
 inputs:
   target: {description: "Target spec (openai:<model>, anthropic:<model>, py:<module>:<fn>, http://...)", required: true}
