@@ -8,28 +8,10 @@ AI Auditor is a zero-dependency Python framework for adversarial testing of LLM 
 RL-trained systems. Its design bet: **a finding should be verifiable evidence, not an LLM's opinion.**
 
 ```bash
-pip install -e .
-ai-auditor demo            # 60 seconds, no API key, runs on simulated agents
-```
-
-
-
-## Reproducible demo (no API key)
-
-Run the built-in demo against two **simulated** agents. It makes no live-model calls and does not require provider credentials:
-
-```bash
 python -m pip install .
-ai-auditor demo --out demo-reports
+ai-auditor demo --out demo-reports  # no API key; simulated agents; writes local reports
 ```
 
-Open `demo-reports/hardened.html` to inspect the report. To compare the saved runs:
-
-```bash
-ai-auditor compare demo-reports/vulnerable.json demo-reports/hardened.json
-```
-
-**Scope note:** simulated results demonstrate the scanner and report workflow only; they do not establish the security of real models or production agents.
 
 ## What makes it different
 
