@@ -1,5 +1,12 @@
 # Evidence-Oriented Adversarial Auditing for AI Agents
 
+**Author:** Subhodip Dutta  
+**Document type:** Technical report / system description  
+**Status:** Draft; not peer-reviewed  
+**Repository:** https://github.com/Subh10/rl-hacking-audit  
+**Version:** 1.0  
+**Date:** 22 October 2026
+
 **System design, observable oracles, replay, statistical reporting, and CI integration**
 
 > **Status:** Technical system-description draft; not peer-reviewed. No benchmark results are claimed.
